@@ -1,0 +1,91 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-image: url('background1.jpeg');
+    background-size: cover;
+    color: white;
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+}
+
+h1 {
+    font-weight: 600;
+}
+
+.logo {
+    width: 80px; 
+}
+
+h2 {
+    text-align: center;
+    margin-top: 10px;
+    font-weight: 400;
+}
+
+#sapi-list-section {
+    text-align: center;
+    margin: 20px;
+}
+
+.sapi-title {
+    color: white;
+    font-weight: 800;
+}
+
+.sapi-list {
+    display: flex;
+    justify-content: center;
+    gap: 30px; 
+}
+
+.sapi-item {
+    cursor: pointer;
+    width: 150px; 
+    transition: transform 0.3s;
+    background-color: rgba(255, 255, 255, 0.563);
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    color: black; 
+}
+
+.sapi-photo-container {
+    width: 150px;
+    height: 150px;
+    overflow: hidden;
+}
+
+.sapi-photo {
+    width: 100%; 
+    border-radius: 10px;
+}
+
+.sapi-item:hover {
+    transform: scale(1.15); 
+}
+
+#sapi-detail {
+    text-align: center;
+}
+
+.back-button {
+    background-color: #6A5ACD; 
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: background-color 0.3s;
+}
+
+.back-button:hover {
+    background-color: #483D8B; 
+}

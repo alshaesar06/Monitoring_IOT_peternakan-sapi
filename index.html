@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard Peternakan Sapi IoT</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <h1>IoT Manajemen Peternakan</h1>
+            <img src="logo.png" alt="Logo Perusahaan" class="logo"> 
+    </header>
+
+    <main>
+        <section id="sapi-list-section">
+            <h1 class="sapi-title">Pilih Sapi</h1>
+            <div class="sapi-list">
+                <div class="sapi-item" onclick="showSapiDetails('sapi1')">
+                    <div class="sapi-photo-container"> 
+                        <img src="sapi1.jpg" alt="Sapi 1" class="sapi-photo">
+                    </div>
+                    <h3>Sapi 1</h3>
+                </div>
+                <div class="sapi-item" onclick="showSapiDetails('sapi2')">
+                    <div class="sapi-photo-container">
+                        <img src="sapi2.jpg" alt="Sapi 2" class="sapi-photo">
+                    </div>
+                    <h3>Sapi 2</h3>
+                </div>
+                <div class="sapi-item" onclick="showSapiDetails('sapi3')">
+                    <div class="sapi-photo-container">
+                        <img src="sapi3.jpg" alt="Sapi 3" class="sapi-photo">
+                    </div>
+                    <h3>Sapi 3</h3>
+                </div>
+                <div class="sapi-item" onclick="showSapiDetails('sapi4')">
+                    <div class="sapi-photo-container">
+                        <img src="sapi4.jpg" alt="Sapi 4" class="sapi-photo">
+                    </div>
+                    <h3>Sapi 4</h3>
+                </div>
+            </div>
+        </section>
+
+        <section id="sapi-detail" style="display:none;">
+            <h1>Detail Sapi</h1>
+            <div id="sapi-info"></div>
+            <button onclick="hideSapi()" class="back-button">Kembali</button>
+        </section>
+    </main>
+
+    <script>
+        const sapiData = {
+            sapi1: { suhu: "37.5 °C", detak: "80 bpm", berat: "350 kg", img: "sapi1.jpg" },
+            sapi2: { suhu: "36.8 °C", detak: "75 bpm", berat: "340 kg", img: "sapi2.jpg" },
+            sapi3: { suhu: "38.0 °C", detak: "85 bpm", berat: "360 kg", img: "sapi3.jpg" },
+            sapi4: { suhu: "37.2 °C", detak: "78 bpm", berat: "345 kg", img: "sapi4.jpg" },
+        };
+
+        function showSapiDetails(sapiId) {
+            const data = sapiData[sapiId];
+            document.getElementById('sapi-info').innerHTML = `
+                <img src="${data.img}" alt="${sapiId}" style="width: 300px; border-radius: 10px;">
+                <p>Suhu Tubuh: ${data.suhu}</p>
+                <p>Detak Jantung: ${data.detak}</p>
+                <p>Berat Badan: ${data.berat}</p>
+            `;
+            document.getElementById('sapi-list-section').style.display = 'none'; 
+            document.getElementById('sapi-detail').style.display = 'block'; 
+        }
+
+        function hideSapi() {
+            document.getElementById('sapi-detail').style.display = 'none'; 
+            document.getElementById('sapi-list-section').style.display = 'block'; 
+        }
+    </script>
+</body>
+</html>
